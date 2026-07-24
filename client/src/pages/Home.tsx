@@ -1,25 +1,28 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import MissionSection from "@/components/MissionSection";
+import FreeResourceSection from "@/components/FreeResourceSection";
+import EbookSection from "@/components/EbookSection";
+import DonateSection from "@/components/DonateSection";
+import Footer from "@/components/Footer";
 
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Home — The Smart Beauty Project landing page
+ * Design: Rooted Radiance (Warm Terracotta Editorial)
+ * Sections: Hero → Mission → Free Resource → eBook → Donate → Footer
  */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
+      <Navbar />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <MissionSection />
+        <FreeResourceSection />
+        <EbookSection />
+        <DonateSection />
       </main>
+      <Footer />
     </div>
   );
 }
