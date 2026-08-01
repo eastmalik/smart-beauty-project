@@ -52,7 +52,7 @@ export default function MissionSection() {
               </p>
             </blockquote>
             <p className="font-body text-[oklch(0.48_0.06_350)] text-base leading-relaxed">
-              Since 2022, The Smart Beauty Project has been equipping Black women with the scientific knowledge necessary to critically evaluate skincare, haircare, and bodycare products — so they can confidently purchase products that align with both their beauty goals and financial goals.
+              The Smart Beauty Project has been equipping Black women with the scientific knowledge necessary to critically evaluate skincare, haircare, and bodycare products — so they can confidently purchase products that align with both their beauty goals and financial goals.
             </p>
           </div>
 

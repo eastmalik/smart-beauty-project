@@ -31,12 +31,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="max-w-2xl">
           {/* Since badge */}
-          <div className="inline-flex items-center gap-2 bg-[oklch(0.62_0.18_0/0.25)] border border-[oklch(0.80_0.10_0/0.5)] rounded-full px-4 py-1.5 mb-6 animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-[oklch(0.80_0.10_60)]" />
-            <span className="font-body text-sm text-[oklch(0.95_0.03_0)] font-medium tracking-wide">
-              Empowering Black Women Since 2022
-            </span>
-          </div>
+          {/* Badge removed via visual editor */}
 
           <h1 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6 animate-fade-up animate-fade-up-delay-1">
             Your Beauty Routine Shouldn't Cost You Your{" "}
