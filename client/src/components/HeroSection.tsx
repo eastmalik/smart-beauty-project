@@ -1,39 +1,46 @@
 /**
- * HeroSection — Rooted Radiance design
- * Split layout: editorial text left, hero image right
- * Deep plum overlay with terracotta accents
+ * HeroSection — Rose Petal design
+ * Clean split layout, NO overflow decorative text (fixes highlighted section bug)
+ * Deep rose overlay, pink accents, 7Band Inc. subtle attribution
  */
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[oklch(0.28_0.08_330)]">
+    <section className="relative min-h-screen flex items-center bg-[oklch(0.38_0.14_350)]" style={{overflow: 'hidden', clipPath: 'inset(0)'}}>
       {/* Background image */}
       <div className="absolute inset-0">
         <img
           src="/manus-storage/hero-main_1ea35f32.jpg"
           alt="Empowered Black woman"
-          className="w-full h-full object-cover object-center opacity-40"
+          className="w-full h-full object-cover object-center opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.28_0.08_330)] via-[oklch(0.28_0.08_330/0.85)] to-[oklch(0.28_0.08_330/0.3)]" />
+        {/* Strong gradient from left covers most of the image; right side fully masked */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.38_0.14_350)] via-[oklch(0.38_0.14_350/0.92)] to-[oklch(0.38_0.14_350/0.85)]" />
+        {/* Extra right-edge mask to fully hide any text in the image */}
+        <div className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-[oklch(0.38_0.14_350)] to-transparent" />
       </div>
 
-      {/* Decorative terracotta accent line */}
-      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[oklch(0.62_0.12_38)]" />
+      {/* Decorative rose accent line */}
+      <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[oklch(0.80_0.10_0)]" />
+
+      {/* Soft pink glow orbs — contained within overflow-hidden */}
+      <div className="absolute top-20 right-20 w-80 h-80 rounded-full bg-[oklch(0.62_0.18_0/0.15)] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-40 w-56 h-56 rounded-full bg-[oklch(0.80_0.10_60/0.10)] blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <div className="max-w-2xl">
           {/* Since badge */}
-          <div className="inline-flex items-center gap-2 bg-[oklch(0.62_0.12_38/0.2)] border border-[oklch(0.62_0.12_38/0.4)] rounded-full px-4 py-1.5 mb-6 animate-fade-up">
-            <span className="w-2 h-2 rounded-full bg-[oklch(0.78_0.12_75)]" />
-            <span className="font-body text-sm text-[oklch(0.88_0.06_38)] font-medium tracking-wide">
+          <div className="inline-flex items-center gap-2 bg-[oklch(0.62_0.18_0/0.25)] border border-[oklch(0.80_0.10_0/0.5)] rounded-full px-4 py-1.5 mb-6 animate-fade-up">
+            <span className="w-2 h-2 rounded-full bg-[oklch(0.80_0.10_60)]" />
+            <span className="font-body text-sm text-[oklch(0.95_0.03_0)] font-medium tracking-wide">
               Empowering Black Women Since 2022
             </span>
           </div>
 
           <h1 className="font-display font-black text-white text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6 animate-fade-up animate-fade-up-delay-1">
             Your Beauty Routine Shouldn't Cost You Your{" "}
-            <em className="text-[oklch(0.78_0.12_75)] not-italic">Financial Future.</em>
+            <em className="text-[oklch(0.88_0.12_0)] not-italic">Financial Future.</em>
           </h1>
 
           <p className="font-body text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl animate-fade-up animate-fade-up-delay-2">
@@ -44,7 +51,7 @@ export default function HeroSection() {
             <a href="#free-resource">
               <Button
                 size="lg"
-                className="bg-[oklch(0.62_0.12_38)] text-white hover:bg-[oklch(0.55_0.12_38)] active:scale-[0.97] transition-all duration-150 font-body font-semibold rounded-full px-8 text-base shadow-lg shadow-[oklch(0.62_0.12_38/0.3)]"
+                className="bg-[oklch(0.62_0.18_0)] text-white hover:bg-[oklch(0.55_0.18_0)] active:scale-[0.97] transition-all duration-150 font-body font-semibold rounded-full px-8 text-base shadow-lg shadow-[oklch(0.62_0.18_0/0.4)]"
               >
                 Access Free Resource
               </Button>
@@ -68,7 +75,7 @@ export default function HeroSection() {
               { value: "501(c)(3)", label: "Nonprofit" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="font-display font-bold text-2xl text-[oklch(0.78_0.12_75)]">{stat.value}</div>
+                <div className="font-display font-bold text-2xl text-[oklch(0.88_0.12_0)]">{stat.value}</div>
                 <div className="font-body text-sm text-white/60 mt-0.5">{stat.label}</div>
               </div>
             ))}
