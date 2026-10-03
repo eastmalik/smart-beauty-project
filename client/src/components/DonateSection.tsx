@@ -5,16 +5,14 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users, BookOpen, TrendingUp } from "lucide-react";
 
-// IMPORTANT: Replace this with your actual Google Form URL
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/PLACEHOLDER_FORM_ID/viewform";
+// Set to the 7Band Inc. hosted donation page once it exists. While empty, the button shows "Coming Soon".
+const DONATION_URL = "";
 
 const impactStats = [
   { icon: Users, value: "2022", label: "Operating Since" },
   { icon: BookOpen, value: "Free", label: "Resources Provided" },
   { icon: TrendingUp, value: "100%", label: "Mission-Driven" },
 ];
-
-const donationAmounts = ["$10", "$25", "$50", "$100", "$250", "Custom"];
 
 export default function DonateSection() {
   return (
@@ -26,7 +24,7 @@ export default function DonateSection() {
       {/* Faint community image */}
       <div className="absolute inset-0 opacity-10">
         <img
-          src="/manus-storage/community-section_7e8141ae.jpg"
+          src="/images/community-section_7e8141ae.jpg"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover object-center"
@@ -86,34 +84,30 @@ export default function DonateSection() {
               </div>
             </div>
 
-            {/* Suggested amounts */}
-            <div className="mb-6">
-              <p className="font-body text-[oklch(0.48_0.05_350)] text-sm mb-3">Select an amount or enter your own:</p>
-              <div className="grid grid-cols-3 gap-2">
-                {donationAmounts.map((amount) => (
-                  <div
-                    key={amount}
-                    className="bg-[oklch(0.96_0.02_0)] hover:bg-[oklch(0.85_0.08_0)] border border-[oklch(0.90_0.04_0)] hover:border-[oklch(0.78_0.10_0)] rounded-xl py-2.5 text-center font-body text-sm font-medium text-[oklch(0.35_0.05_350)] cursor-pointer transition-all duration-150 active:scale-[0.97]"
-                  >
-                    {amount}
-                  </div>
-                ))}
-              </div>
-            </div>
-
             <p className="font-body text-[oklch(0.50_0.05_350)] text-sm mb-5 leading-relaxed">
-              Click below to complete your donation via our secure form. You'll be asked for your name, email, phone number, and donation amount.
+              Donations are processed securely by 7Band Inc. You choose your amount on the donation page.
             </p>
 
-            <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer" className="block">
+            {DONATION_URL ? (
+              <a href={DONATION_URL} target="_blank" rel="noopener noreferrer" className="block">
+                <Button
+                  size="lg"
+                  className="w-full bg-[oklch(0.72_0.12_0)] text-white hover:bg-[oklch(0.65_0.13_0)] active:scale-[0.97] transition-all duration-150 font-body font-semibold rounded-full text-base shadow-lg shadow-[oklch(0.72_0.12_0/0.30)] gap-2"
+                >
+                  <Heart className="w-5 h-5" fill="currentColor" />
+                  Donate Now
+                </Button>
+              </a>
+            ) : (
               <Button
                 size="lg"
-                className="w-full bg-[oklch(0.72_0.12_0)] text-white hover:bg-[oklch(0.65_0.13_0)] active:scale-[0.97] transition-all duration-150 font-body font-semibold rounded-full text-base shadow-lg shadow-[oklch(0.72_0.12_0/0.30)] gap-2"
+                disabled
+                className="w-full bg-[oklch(0.72_0.12_0)] text-white font-body font-semibold rounded-full text-base gap-2"
               >
                 <Heart className="w-5 h-5" fill="currentColor" />
-                Donate Now — Complete the Form
+                Online Donations Coming Soon
               </Button>
-            </a>
+            )}
 
             <p className="font-body text-[oklch(0.55_0.05_350)] text-xs text-center mt-4">
               The Smart Beauty Project is a program of 7Band Inc., a nonprofit organization. Operating since 2022.

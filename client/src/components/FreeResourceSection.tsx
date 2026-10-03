@@ -14,7 +14,8 @@ const features = [
 ];
 
 export default function FreeResourceSection() {
-  const FREE_RESOURCE_URL = "https://docs.google.com/forms/d/e/PLACEHOLDER/viewform";
+  // Set to the toolkit opt-in form once it exists. While empty, the button shows "Coming Soon".
+  const FREE_RESOURCE_URL = "";
 
   return (
     <section id="free-resource" className="relative bg-[oklch(0.85_0.08_0)] py-20 lg:py-28 overflow-hidden">
@@ -47,15 +48,26 @@ export default function FreeResourceSection() {
               ))}
             </ul>
 
-            <a href={FREE_RESOURCE_URL} target="_blank" rel="noopener noreferrer">
+            {FREE_RESOURCE_URL ? (
+              <a href={FREE_RESOURCE_URL} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="bg-[oklch(0.65_0.12_350)] text-white hover:bg-[oklch(0.60_0.13_350)] active:scale-[0.97] transition-all duration-150 font-body font-semibold rounded-full px-8 text-base shadow-lg shadow-[oklch(0.65_0.12_350/0.25)] gap-2"
+                >
+                  <Download className="w-5 h-5" />
+                  Get Free Access Now
+                </Button>
+              </a>
+            ) : (
               <Button
                 size="lg"
-                className="bg-[oklch(0.65_0.12_350)] text-white hover:bg-[oklch(0.60_0.13_350)] active:scale-[0.97] transition-all duration-150 font-body font-semibold rounded-full px-8 text-base shadow-lg shadow-[oklch(0.65_0.12_350/0.25)] gap-2"
+                disabled
+                className="bg-[oklch(0.65_0.12_350)] text-white font-body font-semibold rounded-full px-8 text-base gap-2"
               >
                 <Download className="w-5 h-5" />
-                Get Free Access Now
+                Free Toolkit Coming Soon
               </Button>
-            </a>
+            )}
           </div>
 
           {/* Right: decorative card */}

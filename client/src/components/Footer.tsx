@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <img
-                src="/manus-storage/logo-icon_caa36e32.png"
+                src="/images/logo-icon_caa36e32.png"
                 alt="The Smart Beauty Project"
                 className="w-8 h-8 object-contain"
               />

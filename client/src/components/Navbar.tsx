@@ -35,7 +35,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
             <img
-              src="/manus-storage/logo-icon_caa36e32.png"
+              src="/images/logo-icon_caa36e32.png"
               alt="The Smart Beauty Project logo"
               className="w-9 h-9 object-contain"
             />
