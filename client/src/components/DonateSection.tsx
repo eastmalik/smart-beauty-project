@@ -22,7 +22,7 @@ export default function DonateSection() {
       <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[oklch(0.65_0.12_350/0.15)] blur-3xl pointer-events-none" />
 
       {/* Faint community image */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-15">
         <img
           src="/images/community-section_7e8141ae.jpg"
           alt=""
