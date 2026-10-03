@@ -13,7 +13,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/manus-storage/hero-main_1ea35f32.jpg"
+          src="/images/hero-main_1ea35f32.jpg"
           alt="Empowered Black woman"
           className="w-full h-full object-cover object-center opacity-25"
         />
@@ -68,7 +68,7 @@ export default function HeroSection() {
             {[
               { value: "2022", label: "Founded" },
               { value: "Free", label: "Digital Resources" },
-              { value: "501(c)(3)", label: "Nonprofit" },
+              { value: "7Band Inc.", label: "Parent Organization" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-display font-bold text-2xl text-white">{stat.value}</div>
